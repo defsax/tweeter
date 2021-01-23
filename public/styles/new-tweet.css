@@ -1,0 +1,50 @@
+.new-tweet {
+  padding: 2em;
+  margin: 1em;
+  box-shadow: 5px 5px 10px #545149;
+  border-radius: 10px;
+}
+
+.new-tweet h2 {
+  margin: 0;
+}
+
+.new-tweet form{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 2;
+  
+}
+.new-tweet button {
+  background:#4056A1;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.25em 0.5em;
+}
+
+.new-tweet label {
+  font-weight: bold;
+}
+
+.new-tweet:hover {
+  box-shadow: 5px 5px 15px #545149;
+}
+
+#tweet-text {
+  background: #f4f1ec;
+  border: none;
+  border-bottom: 4px solid #545149;
+  
+  margin: 1em 0;
+
+  outline: none;
+  resize: none;
+}
+.submit-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
