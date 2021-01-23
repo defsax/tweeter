@@ -21,12 +21,20 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+
+    <script>
+      document.addEventListener("dblclick", (event) => {
+      console.log('mouse x:', event.clientX, 'mouse y:', event.clientY);
+      });
+    </script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <a href="#tweet-text"><b>Write</b> a new tweet</a>
     </nav>
 
     <header>
@@ -37,6 +45,7 @@
       <div>
         <h2>Your name...</h2>
       </div>
+
     </header>
     
     <!-- Page-specific (main) content here -->

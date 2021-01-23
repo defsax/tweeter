@@ -6,8 +6,16 @@ nav {
   padding: 1.5em;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 nav span {
   font-family: 'Bungee', sans-serif;
+  font-size: 1.75em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding-right: 1em;
 }
