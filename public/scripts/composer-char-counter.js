@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 $(document).ready(function() {
   const counter = $("#tweet-text").parent().find($("output.counter"));
 
