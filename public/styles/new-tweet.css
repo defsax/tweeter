@@ -28,10 +28,6 @@
   font-weight: bold;
 }
 
-.new-tweet:hover {
-  box-shadow: 5px 5px 15px #545149;
-}
-
 .new-tweet textarea {
   background: #f4f1ec;
   border: none;
