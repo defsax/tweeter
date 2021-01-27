@@ -5,12 +5,70 @@
  */
 
 const setDate = function(timeCreated) {
-  let $convertedDate;
+  //timeframes
+  const SECOND = 1000;
+  const MINUTE = 60000;
+  const HOUR = 3600000;
+  const DAY = 86400000;
+  const WEEK = 604800000;
+  const MONTH = 2629800000;
+  const YEAR = 31557600000;
 
-  console.log(timeCreated.toDateString().substr(4));
+  let now = new Date().getTime();
+  let timeSince = now - timeCreated;
+
+  //show time since post
+  //console.log('now:',now, 'timeCreated:', timeCreated, 'time since tweet:', timeSince);
+  
+  //check times
+  switch (true) {
+  //if less than a minute, show seconds since
+  case (timeSince < MINUTE):
+    console.log('tweet posted less than a minute ago');
+    return `${Math.round(timeSince / SECOND)} seconds ago`;
+  
+  //if less than an hour, show minutes since
+  case (timeSince < HOUR):
+    console.log('tweet posted less than an hour ago');
+    return `${Math.round(timeSince / MINUTE)} minutes ago`;
+
+  //if less than a day, show hours since
+  case (timeSince < DAY):
+    console.log('tweet posted less than a day ago');
+    return `${Math.round(timeSince / HOUR)} hours ago`;
+
+  //if less than a week, show days since
+  case (timeSince < WEEK):
+    console.log('tweet posted less than a week ago');
+    return `${Math.round(timeSince / DAY)} days ago`;
+    
+  //if less than a month, show weeks since
+  case (timeSince < MONTH):
+    console.log('tweet posted less than a month ago');
+    return `${Math.round(timeSince / WEEK)} weeks ago`;
+
+  //if less than a year, show months since
+  case (timeSince < YEAR):
+    console.log('tweet posted less than a year ago');
+    return `${Math.round(timeSince / MONTH)} months ago`;
+
+  //if greater than a year, show date
+  default:
+    return new Date(timeCreated).toDateString().substr(4);
+  }
 };
 
 const createTweetElement = function(data) {
+  //test code for date functionality
+  // const secondsTest = new Date().getTime() - 30000;
+  // const minutesTest = new Date().getTime() - 2600000;
+  // const hoursTest = new Date().getTime() - 76400000;
+  // const daysTest = new Date().getTime() - 504800000;
+  // const weeksTest = new Date().getTime() - 1629800000;
+  // const monthsTest = new Date().getTime() - 21557600000;
+  // const yearsTest = new Date().getTime() - 41557600000;
+  
+
   const $element = `
   <article class="tweet">
     <header>
@@ -28,7 +86,8 @@ const createTweetElement = function(data) {
     </header>
     <p>${data.content.text}</p>
     <footer>
-      <p>${data.created_at}</p>
+    
+      <p>${setDate(data.created_at)}</p>
       <div class="controls">
         <a href="#"><i class="fas fa-flag"></i></a>
         <a href="#"><i class="fas fa-retweet"></i></a>
