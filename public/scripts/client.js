@@ -106,8 +106,6 @@ $(document).ready(function() {
     }
   };
 
-  // renderTweets(tweetData);
-
   const loadTweets = function() {
     $.ajax({
       url: '/tweets',
@@ -138,21 +136,21 @@ $(document).ready(function() {
 
   //handle form submission
   $('#tweet-submit').on('submit', function(event) {
-    // prevent the default form submission
+    // Prevent the default form submission
     event.preventDefault();
-    // Read the data from the input text content
-    // target the search box in the form
+
+    // Read the data from the input tweet-text
     const tweetBox = $('#tweet-text');
     
-    //convert content of tweetBox
+    // Convert content of tweetBox
     const tweetText = tweetBox.serialize();
-    console.log(tweetText);
     
-    //perform ajax request
+    // Perform ajax request
     postTweet(tweetText);
     
-    tweetBox.val(''); // reset the content of the tweet box to empty string
+    // Reset the content of the tweet box to empty string
+    tweetBox.val('');
 
-    //TODO: update tweet list
+    //TODO: update tweet list (in reverse order)
   });
 });
