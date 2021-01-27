@@ -5,7 +5,12 @@
  */
 /* eslint-disable no-undef */
 $(document).ready(function() {
+  const resetForm = function() {
+    $("#tweet-text").parent().find($("output.counter"))[0].value = 140;
+    $('#tweet-text').val('');
+  };
 
+  resetForm();
 
   const setDate = function(timeCreated) {
   //timeframes
@@ -100,12 +105,17 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets) {
+    //empty tweet container before rendering
+    $('#tweets-container').empty();
+
+    //loop and create html for each tweet before prepending
     for (let item of tweets) {
       const $tweet = createTweetElement(item);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   };
 
+  //ajax get to load tweet list
   const loadTweets = function() {
     $.ajax({
       url: '/tweets',
@@ -114,7 +124,6 @@ $(document).ready(function() {
       .done((result) => {
         // success case. getting the result of the api
         // this is the only block where you can access the result
-        console.log(result);
         renderTweets(result);
       })
       .fail(() =>
@@ -129,7 +138,10 @@ $(document).ready(function() {
   //handle ajax request
   const postTweet = function(content) {
     $.ajax({url: '/tweets', method: 'POST', data: content})
-      .done((result) => console.log('.done', result))
+      .done((result) => {
+        console.log('.done', result);
+        loadTweets();
+      })
       .fail(() => console.log('.error: there was an error.'))
       .always(() => console.log('.always'));
   };
@@ -142,15 +154,24 @@ $(document).ready(function() {
     // Read the data from the input tweet-text
     const tweetBox = $('#tweet-text');
     
-    // Convert content of tweetBox
-    const tweetText = tweetBox.serialize();
-    
-    // Perform ajax request
-    postTweet(tweetText);
-    
-    // Reset the content of the tweet box to empty string
-    tweetBox.val('');
+    if (!tweetBox.val().length) {
+      console.log('tweet box is empty');
+      alert('Cannot submit empty tweet!');
+    } else if (tweetBox.val().length > 140) {
+      console.log('more than 140 characters');
+      alert('Cannot submit more than 140 characters!');
+    } else {
 
-    //TODO: update tweet list (in reverse order)
+      // Convert content of tweetBox
+      const tweetText = tweetBox.serialize();
+      
+      // Perform ajax request
+      postTweet(tweetText);
+      
+      // Reset the content of the tweet box to empty string and reset counter
+      resetForm();
+
+      //TODO: update tweet list (in reverse order)
+    }
   });
 });
