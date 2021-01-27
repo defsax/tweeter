@@ -30,3 +30,14 @@ body {
    width: 90%;
    background-color: #f4f1ec;
  }
+
+ .container {
+  padding: 2em;
+  margin: auto;
+  margin-top: 2em;
+  box-shadow: 5px 5px 10px #545149;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ }
