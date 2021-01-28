@@ -9,5 +9,26 @@ $(document).ready(function() {
     else
       counter.css({"color": "black"});
   });
+
+  $(".scrll-btn-container > button").on('click', function() {
+
+    if ($('.new-tweet').css('display') === 'none') {
+      $('.new-tweet').css('display', 'block');
+    }
+
+    $('html, body').animate({scrollTop:530}, 800, 'swing');
+  });
+
+  $(window).scroll(() => {
+    if ($(window).scrollTop() >= 531) {
+      $(".scrll-btn-container").css('display', 'block');
+    } else {
+      $(".scrll-btn-container").css('display', 'none');
+    }
+  });
+
+  $(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+  });
 });
 

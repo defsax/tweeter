@@ -31,10 +31,15 @@ main {
   background-color: #f4f1ec;
 }
 
+button {
+  outline: none;
+}
+
 .scrll-btn-container {
   position: fixed;
   bottom: 0;
   right: 0;
+  display: none;
 }
 
 .scrll-btn-container > button {
@@ -51,10 +56,27 @@ main {
   font-size: 2em;
 }
 
+.scrll-btn-container > button:hover{
+  color: #c5cbe3;
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
 .container {
   padding: 2em;
   margin: auto;
-  margin-top: 2em;
+  margin-top: 3em;
   box-shadow: 5px 5px 10px #545149;
   border-radius: 10px;
   display: flex;

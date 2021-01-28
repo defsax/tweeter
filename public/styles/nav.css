@@ -6,13 +6,24 @@ nav {
   padding: 1.5em;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: sticky;
+  justify-content: right;
+  /* position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 1; */
 }
 
-nav span {
+nav > div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 1em;
+  padding: 0.5em 1em;
+  z-index: 1;
+  background: inherit;
+  border-radius: 10px;  
+}
+
+nav > div > span {
   font-family: 'Bungee', sans-serif;
   font-size: 1.75em;
 }
@@ -22,7 +33,7 @@ nav button {
   background: none;
   border: none;
   padding: 0.5em;
-  margin: 1em;
+  margin-left: auto;
   border-radius: 10px;
   transition-duration: 0.7s;
 }

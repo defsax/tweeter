@@ -31,18 +31,19 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+    <!-- Top nav bar (sticky) -->
     <nav>
-      <span>tweeter</span>
+      <div>
+        <span>tweeter</span>
+      </div>
       <button type="button"><b>Write</b> a new tweet</button>
-      <!-- <a href="#"><b>Write</b> a new tweet</a> -->
     </nav>
 
     <header>
+      <br>
       <div>
         <img src="/images/profile-hex.png">
       </div>
-      <br>
       <div>
         <h2>Your name...</h2>
       </div>
@@ -57,7 +58,7 @@
         <p class="error-msg"></p>
         <form action="/tweets/" method="POST" id="tweet-submit">
           <!-- <label for="tweet-text">What are you humming about?</label> -->
-          <textarea name="text" id="tweet-text" rows="1" placeholder="What Are You Humming About?"></textarea>
+          <textarea name="text" id="tweet-text" rows="1" placeholder="What Are You Humming About?" style="overflow: auto"></textarea>
           <div class="submit-counter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>

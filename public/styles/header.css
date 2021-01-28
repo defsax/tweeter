@@ -1,4 +1,6 @@
 body > header {
+  position: relative;
+  top: auto;
   height: 400px;
   width: 100%;
   background: #F6FBFF;

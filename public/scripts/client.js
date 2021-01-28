@@ -18,13 +18,9 @@ $(document).ready(function() {
   //slideup or down on selected element
   const toggleSlider = function(isDisplayed, target = '') {
     if (isDisplayed === true) {
-      $(target).slideDown(400, 'swing', () => {
-        $(target).css('display','block');
-      });
+      $(target).slideDown(400, 'swing');
     } else if (isDisplayed === false) {
-      $(target).slideUp(400, 'swing', () => {
-        $(target).css('display','none');
-      });
+      $(target).slideUp(400, 'swing');
     }
   };
   
@@ -53,32 +49,26 @@ $(document).ready(function() {
     switch (true) {
     //if less than a minute, show seconds since
     case (timeSince < MINUTE):
-      console.log('tweet posted less than a minute ago');
       return `${Math.round(timeSince / SECOND)} seconds ago`;
   
       //if less than an hour, show minutes since
     case (timeSince < HOUR):
-      console.log('tweet posted less than an hour ago');
       return `${Math.round(timeSince / MINUTE)} minute(s) ago`;
 
       //if less than a day, show hours since
     case (timeSince < DAY):
-      console.log('tweet posted less than a day ago');
       return `${Math.round(timeSince / HOUR)} hour(s) ago`;
 
       //if less than a week, show days since
     case (timeSince < WEEK):
-      console.log('tweet posted less than a week ago');
       return `${Math.round(timeSince / DAY)} day(s) ago`;
     
       //if less than a month, show weeks since
     case (timeSince < MONTH):
-      console.log('tweet posted less than a month ago');
       return `${Math.round(timeSince / WEEK)} week(s) ago`;
 
       //if less than a year, show months since
     case (timeSince < YEAR):
-      console.log('tweet posted less than a year ago');
       return `${Math.round(timeSince / MONTH)} month(s) ago`;
 
       //if greater than a year, show date
@@ -142,11 +132,11 @@ $(document).ready(function() {
         // success case. getting the result of the api
         // this is the only block where you can access the result
         renderTweets(result);
+        console.log('AJAX complete: Fetched tweets.');
       })
       .fail(() =>
         console.log('There was an error getting the info')
-      )
-      .always(() => console.log('Request is completed.'));
+      );
   };
 
   loadTweets();
@@ -156,11 +146,10 @@ $(document).ready(function() {
   const postTweet = function(content) {
     $.ajax({url: '/tweets', method: 'POST', data: content})
       .done((result) => {
-        console.log('.done', result);
+        console.log('AJAX complete: Posted tweet.', result);
         loadTweets();
       })
-      .fail(() => console.log('.error: there was an error.'))
-      .always(() => console.log('.always'));
+      .fail(() => console.log('There was an error.'));
   };
 
   //handle form submission
@@ -171,13 +160,17 @@ $(document).ready(function() {
     // Read the data from the input tweet-text
     const tweetBox = $('#tweet-text');
     
+    // If tweetbox is empty
     if (!tweetBox.val().length) {
       $('.error-msg').html('<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something other than nothing!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>');
-      toggleSlider(true, '.error-msg');// ,'<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something other than nothing!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>');
+      
+      toggleSlider(true, '.error-msg');
     
+      //If characters in tweet box are greater than 140
     } else if (tweetBox.val().length > 140) {
       $('.error-msg').html('<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something fewer than 140 characters!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>');
-      toggleSlider(true, '.error-msg');//, `<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something fewer than 140 characters!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>`);
+      
+      toggleSlider(true, '.error-msg');
    
     } else {
 
@@ -196,11 +189,6 @@ $(document).ready(function() {
 
   //toggle new tweet box
   $('body > nav > button').on('click', function() {
-    if ($('.new-tweet').css('display') === 'none') {
-      toggleSlider(true, ".new-tweet");
-      window.scrollTo(0, 430);
-    } else {
-      toggleSlider(false, ".new-tweet");
-    }
+    $('.new-tweet').slideToggle(400,'swing');
   });
 });
