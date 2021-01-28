@@ -16,11 +16,22 @@ $(document).ready(function() {
       $('.new-tweet').css('display', 'block');
     }
 
-    $('html, body').animate({scrollTop:530}, 800, 'swing');
+    let homePos = 0;
+    console.log($(window).width());
+    if ($(window).width() < 768)
+      homePos = 530;
+
+    $('html, body').animate({scrollTop:homePos}, 800, 'swing');
   });
 
   $(window).scroll(() => {
-    if ($(window).scrollTop() >= 531) {
+    let buttonAppearAt = 120;
+    console.log($(window).width());
+    if ($(window).width() < 768)
+      buttonAppearAt = 531;
+
+
+    if ($(window).scrollTop() >= buttonAppearAt) {
       $(".scrll-btn-container").css('display', 'block');
     } else {
       $(".scrll-btn-container").css('display', 'none');

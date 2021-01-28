@@ -84,17 +84,16 @@ $(document).ready(function() {
     const $element = `
       <article class="tweet">
         <header>
-          <div>
-            <!-- profile pic -->
-            <img src="${data.user.avatars}">
+          <!-- profile pic -->
+          <img src="${data.user.avatars}">
 
+          <div>
             <!-- username -->
             <p>${data.user.name}</p>
+            
+            <!-- profile/handle link -->
+            <a href="#" class="handle">${data.user.handle}</a>
           </div>
-
-          <!-- profile/handle link -->
-          <a href="#" class="handle">${data.user.handle}</a>
-
         </header>
         <p>${escape(data.content.text)}</p>
         <footer>

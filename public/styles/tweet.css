@@ -15,6 +15,10 @@ article.tweet:hover .handle{
   font-weight: 400;
 }
 
+article.tweet .handle{
+  display: none;
+}
+
 article.tweet header {
   margin: 1em;
   padding-right: 1em;
@@ -24,9 +28,11 @@ article.tweet header {
 }
 
 article.tweet header > div {
-  display: inherit;
+  display: flex;
   flex-direction: row;
   align-items: center;
+  width: 100%;
+  justify-content: space-between;
 }
 article.tweet header > div > p{
   font-weight: 200;

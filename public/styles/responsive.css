@@ -31,3 +31,18 @@
     border-radius: 0;  
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  article.tweet header {
+    padding-right: 0;
+  }
+  
+  article.tweet header > div {
+    flex-direction: column;
+  }
+  
+  article.tweet header > div {
+    display: inherit;
+    align-items: flex-end;
+  }
+}
