@@ -1,5 +1,4 @@
 @media only screen and (min-width: 768px) {
-
   body > header {
     position: fixed;
     top: 0;
@@ -9,14 +8,13 @@
     z-index: -1;
     float: left;
   }
-
   .container {
     width: 52%;
     float: right;
     margin: 1em;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
-
   nav > div {
     position: fixed;
     top: 0;
@@ -26,9 +24,13 @@
     z-index: 1;
     background: inherit;
     width: 42%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    border-radius: 0;  
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 0;
   }
 }
 
@@ -36,13 +38,15 @@
   article.tweet header {
     padding-right: 0;
   }
-  
-  article.tweet header > div {
-    flex-direction: column;
-  }
-  
-  article.tweet header > div {
+  article.tweet header div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     display: inherit;
-    align-items: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
+/*# sourceMappingURL=responsive.css.map */

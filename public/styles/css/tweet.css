@@ -1,0 +1,111 @@
+article.tweet {
+  border: 4px solid #545149;
+  margin-bottom: 2em;
+  font-weight: 200;
+  background-color: #f7f2ea;
+}
+
+article.tweet:hover {
+  -webkit-box-shadow: 10px 10px #2A9D8F;
+          box-shadow: 10px 10px #2A9D8F;
+  text-shadow: 1px 0 .2px #545149;
+}
+
+article.tweet:hover .handle {
+  display: block;
+  text-shadow: none;
+  color: #2A9D8F;
+  font-weight: 400;
+}
+
+article.tweet .handle {
+  display: none;
+}
+
+article.tweet header {
+  margin: 1em;
+  padding-right: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+article.tweet header > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+article.tweet header > div > p {
+  font-weight: 200;
+  margin-left: 1em;
+}
+
+article.tweet header img {
+  width: 75px;
+}
+
+article.tweet footer {
+  margin: 0.5em;
+  border-top: 4px solid #545149;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 1em 1em;
+  font-size: 0.8em;
+}
+
+article.tweet p {
+  margin: 0;
+  font-weight: 300;
+  word-wrap: break-word;
+}
+
+article.tweet > p {
+  margin: 1.5em;
+}
+
+article.tweet .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+article.tweet .controls a {
+  padding-left: 0.5em;
+  color: #2A9D8F;
+}
+
+article.tweet a {
+  color: #b8b5ad;
+  text-decoration: none;
+}
+/*# sourceMappingURL=tweet.css.map */

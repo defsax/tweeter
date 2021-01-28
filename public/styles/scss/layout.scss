@@ -25,6 +25,8 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+@import "palette";
+
 main {
   margin: auto;
   width: 90%;
@@ -40,24 +42,25 @@ button {
   bottom: 0;
   right: 0;
   display: none;
-}
 
-.scrll-btn-container > button {
-  box-sizing: content-box;
-  color: white;
-  background: #E76F51;
-  border: none;
-  padding: 0.5em;
-  margin: 0.5em 0.3em;
-  border-radius: 60%;
-  transition-duration: 0.7s;
-  width: 50px;
-  height: 50px;
-  font-size: 2em;
-}
 
-.scrll-btn-container > button:hover{
-  animation: rotation 2s linear infinite;
+  button {
+    box-sizing: content-box;
+    color: white;
+    background: $red;
+    border: none;
+    padding: 0.5em;
+    margin: 0.5em 0.3em;
+    border-radius: 60%;
+    transition-duration: 0.7s;
+    width: 50px;
+    height: 50px;
+    font-size: 2em;
+  } 
+
+  button:hover{
+    animation: rotation 2s linear infinite;
+  }
 }
 
 @keyframes rotation {

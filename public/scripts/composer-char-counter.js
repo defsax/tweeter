@@ -17,7 +17,6 @@ $(document).ready(function() {
     }
 
     let homePos = 0;
-    console.log($(window).width());
     if ($(window).width() < 768)
       homePos = 530;
 
@@ -26,7 +25,6 @@ $(document).ready(function() {
 
   $(window).scroll(() => {
     let buttonAppearAt = 120;
-    console.log($(window).width());
     if ($(window).width() < 768)
       buttonAppearAt = 531;
 

@@ -1,0 +1,72 @@
+.new-tweet {
+  margin-bottom: 2em;
+}
+
+.new-tweet h2 {
+  margin: 0;
+}
+
+.new-tweet .error-msg {
+  margin: 1em 0;
+  padding: 0.5em;
+  color: white;
+  background: #E76F51;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.new-tweet form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+.new-tweet button {
+  background: #F4A261;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.25em 0.5em;
+}
+
+.new-tweet label {
+  font-weight: bold;
+}
+
+.new-tweet textarea {
+  background: #f4f1ec;
+  border: none;
+  border-bottom: 4px solid #545149;
+  margin: 1em 0;
+  outline: none;
+  resize: none;
+}
+
+.submit-counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
+/*# sourceMappingURL=new-tweet.css.map */

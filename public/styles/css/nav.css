@@ -4,12 +4,18 @@ nav {
   background: #264653;
   color: #FFFFFF;
   padding: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
 }
 
-nav > div {
+nav div {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,10 +23,10 @@ nav > div {
   padding: 0.5em 1em;
   z-index: 1;
   background: inherit;
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 
-nav > div > span {
+nav div span {
   font-family: 'Bungee', sans-serif;
   font-size: 1.75em;
 }
@@ -32,9 +38,11 @@ nav button {
   padding: 0.5em;
   margin-left: auto;
   border-radius: 10px;
-  transition-duration: 0.7s;
+  -webkit-transition-duration: 0.7s;
+          transition-duration: 0.7s;
 }
 
 nav button:hover {
   background: #E9C46A;
 }
+/*# sourceMappingURL=nav.css.map */

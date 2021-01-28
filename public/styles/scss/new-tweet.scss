@@ -1,0 +1,53 @@
+@import "palette";
+
+.new-tweet {
+  margin-bottom: 2em;
+
+  h2 {
+    margin: 0;
+  }
+
+  .error-msg {
+    margin: 1em 0;
+    padding: 0.5em;
+    color: white;
+    background: $red;
+    display: none;
+    justify-content: center;
+  }
+
+  form{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 2;
+  }
+
+  button {
+    background: $orange;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.25em 0.5em;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  textarea {
+    background: #f4f1ec;
+    border: none;
+    border-bottom: 4px solid #545149;
+    margin: 1em 0;
+    outline: none;
+    resize: none;
+  }
+}
+
+.submit-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}

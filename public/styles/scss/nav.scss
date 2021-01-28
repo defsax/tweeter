@@ -1,0 +1,42 @@
+@import "palette";
+
+nav {
+  height: 120px;
+  width: 100%;
+  background: $blue;
+  color: #FFFFFF;
+  padding: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 1em;
+    padding: 0.5em 1em;
+    z-index: 1;
+    background: inherit;
+    border-radius: 10px;  
+
+    span {
+      font-family: 'Bungee', sans-serif;
+      font-size: 1.75em;
+    }
+  }
+ 
+  button {
+    color: white;
+    background: none;
+    border: none;
+    padding: 0.5em;
+    margin-left: auto;
+    border-radius: 10px;
+    transition-duration: 0.7s;
+  }
+
+  button:hover {
+    background: $yellow;
+  }
+}
