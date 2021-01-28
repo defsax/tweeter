@@ -87,16 +87,6 @@ $(document).ready(function() {
   };
 
   const createTweetElement = function(data) {
-  //test code for date functionality
-  // const secondsTest = new Date().getTime() - 30000;
-  // const minutesTest = new Date().getTime() - 2600000;
-  // const hoursTest = new Date().getTime() - 76400000;
-  // const daysTest = new Date().getTime() - 504800000;
-  // const weeksTest = new Date().getTime() - 1629800000;
-  // const monthsTest = new Date().getTime() - 21557600000;
-  // const yearsTest = new Date().getTime() - 41557600000;
-  
-
     const $element = `
       <article class="tweet">
         <header>
@@ -178,31 +168,23 @@ $(document).ready(function() {
     const tweetBox = $('#tweet-text');
     
     if (!tweetBox.val().length) {
-
-      console.log('tweet box is empty');
-    
       toggleSlider(true, '.error-msg' ,'<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something other than nothing!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>');
     
     } else if (tweetBox.val().length > 140) {
-    
-      console.log('more than 140 characters');
-    
       toggleSlider(true, '.error-msg', `<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something fewer than 140 characters!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>`);
    
     } else {
 
       toggleSlider(false);
-
+    
       // Convert content of tweetBox
       const tweetText = tweetBox.serialize();
-      
+    
       // Perform ajax request
       postTweet(tweetText);
       
       // Reset the content of the tweet box to empty string and reset counter
       resetForm();
-
-      //TODO: update tweet list (in reverse order)
     }
   });
 });
