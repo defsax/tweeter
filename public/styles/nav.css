@@ -17,8 +17,16 @@ nav span {
   font-size: 1.75em;
 }
 
-nav a {
+nav button {
   color: white;
-  text-decoration: none;
-  padding-right: 1em;
+  background: none;
+  border: none;
+  padding: 0.5em;
+  margin: 1em;
+  border-radius: 10px;
+  transition-duration: 0.7s;
+}
+
+nav button:hover {
+  background: rgba(1, 1, 1, 0.233);
 }

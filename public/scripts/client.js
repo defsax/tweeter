@@ -6,6 +6,8 @@
 /* eslint-disable no-undef */
 $(document).ready(function() {
 
+  // HELPER FUNCTIONS //
+
   //convert characters safely
   const escape =  function(str) {
     let div = document.createElement('div');
@@ -13,16 +15,15 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-  const toggleSlider = function(isDisplayed, target = '', msg = '') {
+  //slideup or down on selected element
+  const toggleSlider = function(isDisplayed, target = '') {
     if (isDisplayed === true) {
       $(target).slideDown(400, 'swing', () => {
-        $(target).css('display','flex');
-        $(target).html(msg);
+        $(target).css('display','block');
       });
     } else if (isDisplayed === false) {
       $(target).slideUp(400, 'swing', () => {
         $(target).css('display','none');
-        $(target).html(msg);
       });
     }
   };
@@ -58,7 +59,7 @@ $(document).ready(function() {
       //if less than an hour, show minutes since
     case (timeSince < HOUR):
       console.log('tweet posted less than an hour ago');
-      return `${Math.round(timeSince / MINUTE)} minutes ago`;
+      return `${Math.round(timeSince / MINUTE)} minute(s) ago`;
 
       //if less than a day, show hours since
     case (timeSince < DAY):
@@ -85,6 +86,9 @@ $(document).ready(function() {
       return new Date(timeCreated).toDateString().substr(4);
     }
   };
+
+
+  // MAIN FUNCTIONS //
 
   const createTweetElement = function(data) {
     const $element = `
@@ -148,7 +152,7 @@ $(document).ready(function() {
   loadTweets();
   
 
-  //handle ajax request
+  //ajax to add a new tweet
   const postTweet = function(content) {
     $.ajax({url: '/tweets', method: 'POST', data: content})
       .done((result) => {
@@ -168,14 +172,16 @@ $(document).ready(function() {
     const tweetBox = $('#tweet-text');
     
     if (!tweetBox.val().length) {
-      toggleSlider(true, '.error-msg' ,'<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something other than nothing!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>');
+      $('.error-msg').html('<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something other than nothing!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>');
+      toggleSlider(true, '.error-msg');// ,'<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something other than nothing!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>');
     
     } else if (tweetBox.val().length > 140) {
-      toggleSlider(true, '.error-msg', `<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something fewer than 140 characters!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>`);
+      $('.error-msg').html('<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something fewer than 140 characters!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>');
+      toggleSlider(true, '.error-msg');//, `<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something fewer than 140 characters!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>`);
    
     } else {
 
-      toggleSlider(false);
+      toggleSlider(false, '.error-msg');
     
       // Convert content of tweetBox
       const tweetText = tweetBox.serialize();
@@ -185,6 +191,16 @@ $(document).ready(function() {
       
       // Reset the content of the tweet box to empty string and reset counter
       resetForm();
+    }
+  });
+
+  //toggle new tweet box
+  $('body > nav > button').on('click', function() {
+    if ($('.new-tweet').css('display') === 'none') {
+      toggleSlider(true, ".new-tweet");
+      window.scrollTo(0, 430);
+    } else {
+      toggleSlider(false, ".new-tweet");
     }
   });
 });
