@@ -1,15 +1,14 @@
 @import "palette";
+@import "mixins";
 
 body > header {
+  @include center;
   position: relative;
   top: auto;
   height: 400px;
   width: 100%;
   background: $yellow;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   background-image: url('../../images/always-grey.png'); 
 
