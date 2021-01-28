@@ -4,7 +4,14 @@ Tweeter is a simple, single-page Twitter clone.
 
 It uses AJAX, jQuery, HTML5, CSS3, JavaScript as well as SASS, Node, and Express.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Created as a front-end project for Lighthouse Labs.
+
+## Final Product
+
+!["Screenshot of full app"](https://github.com/defsax/tweeter/blob/master/docs/fullnav.png)
+!["Screenshot of mobile feed"](https://github.com/defsax/tweeter/blob/master/docs/feed.png)
+!["Screenshot of fullsized app view with text box"](https://github.com/defsax/tweeter/blob/master/docs/fullsize.png)
+!["Screenshot of tablet scaled header"](https://github.com/defsax/tweeter/blob/master/docs/header-tablet.png)
 
 ## Getting Started
 
