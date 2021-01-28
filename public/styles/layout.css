@@ -45,7 +45,7 @@ button {
 .scrll-btn-container > button {
   box-sizing: content-box;
   color: white;
-  background: #4056A1;
+  background: #E76F51;
   border: none;
   padding: 0.5em;
   margin: 0.5em 0.3em;
@@ -57,7 +57,6 @@ button {
 }
 
 .scrll-btn-container > button:hover{
-  color: #c5cbe3;
   animation: rotation 2s linear infinite;
 }
 

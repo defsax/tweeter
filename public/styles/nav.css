@@ -1,7 +1,7 @@
 nav {
   height: 120px;
   width: 100%;
-  background: #4056A1;
+  background: #264653;
   color: #FFFFFF;
   padding: 1.5em;
   display: flex;
@@ -36,5 +36,5 @@ nav button {
 }
 
 nav button:hover {
-  background: rgba(1, 1, 1, 0.233);
+  background: #E9C46A;
 }

@@ -1,17 +1,18 @@
 article.tweet {
   border: 4px solid #545149;
-  margin-top: 2em;
+  margin-bottom: 2em;
   font-weight: 200;
+  background-color: #f7f2ea;
 }
 article.tweet:hover {
-  box-shadow: 10px 10px #c5cbe3;
+  box-shadow: 10px 10px #2A9D8F;
   text-shadow: 1px 0 .2px #545149;
 }
 
 article.tweet:hover .handle{
   display: block;
   text-shadow: none;
-  color: #c5cbe3;
+  color: #2A9D8F;
   font-weight: 400;
 }
 
@@ -69,7 +70,7 @@ article.tweet .controls {
 }
 article.tweet .controls a {
   padding-left: 0.5em;
-  color: #4056A1;
+  color: #2A9D8F;
 }
 
 article.tweet a {
