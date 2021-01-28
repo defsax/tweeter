@@ -1,4 +1,5 @@
 @import "palette";
+@import "fonts";
 
 .new-tweet {
   margin-bottom: 2em;
@@ -49,5 +50,5 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: 'Bungee', sans-serif;
+  font-family: $titlefont;
 }

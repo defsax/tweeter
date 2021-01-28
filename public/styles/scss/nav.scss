@@ -1,4 +1,5 @@
 @import "palette";
+@import "fonts";
 
 nav {
   height: 120px;
@@ -21,7 +22,7 @@ nav {
     border-radius: 10px;  
 
     span {
-      font-family: 'Bungee', sans-serif;
+      font-family: $titlefont;
       font-size: 1.75em;
     }
   }
