@@ -50,6 +50,7 @@ article.tweet footer {
 article.tweet p {
   margin: 0;
   font-weight: 300;
+  word-wrap: break-word;
 }
 
 article.tweet > p {

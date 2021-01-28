@@ -5,6 +5,29 @@
  */
 /* eslint-disable no-undef */
 $(document).ready(function() {
+
+  //convert characters safely
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  const toggleSlider = function(isDisplayed, target = '', msg = '') {
+    if (isDisplayed === true) {
+      $(target).slideDown(400, 'swing', () => {
+        $(target).css('display','flex');
+        $(target).html(msg);
+      });
+    } else if (isDisplayed === false) {
+      $(target).slideUp(400, 'swing', () => {
+        $(target).css('display','none');
+        $(target).html(msg);
+      });
+    }
+  };
+  
+  //clear form and reset counter to 140
   const resetForm = function() {
     $("#tweet-text").parent().find($("output.counter"))[0].value = 140;
     $('#tweet-text').val('');
@@ -89,7 +112,7 @@ $(document).ready(function() {
           <a href="#" class="handle">${data.user.handle}</a>
 
         </header>
-        <p>${data.content.text}</p>
+        <p>${escape(data.content.text)}</p>
         <footer>
         
           <p>${setDate(data.created_at)}</p>
@@ -155,12 +178,20 @@ $(document).ready(function() {
     const tweetBox = $('#tweet-text');
     
     if (!tweetBox.val().length) {
+
       console.log('tweet box is empty');
-      alert('Cannot submit empty tweet!');
+    
+      toggleSlider(true, '.error-msg' ,'<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something other than nothing!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>');
+    
     } else if (tweetBox.val().length > 140) {
+    
       console.log('more than 140 characters');
-      alert('Cannot submit more than 140 characters!');
+    
+      toggleSlider(true, '.error-msg', `<i class="fas fa-times"></i>\xa0\xa0\xa0\xa0Please enter something fewer than 140 characters!\xa0\xa0\xa0\xa0<i class="fas fa-times"></i>`);
+   
     } else {
+
+      toggleSlider(false);
 
       // Convert content of tweetBox
       const tweetText = tweetBox.serialize();

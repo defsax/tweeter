@@ -2,6 +2,15 @@
   margin: 0;
 }
 
+.new-tweet .error-msg {
+  margin: 1em 0;
+  padding: 0.5em;
+  color: red;
+  background: pink;
+  display: none;
+  justify-content: center;
+}
+
 .new-tweet form{
   display: flex;
   align-items: stretch;
