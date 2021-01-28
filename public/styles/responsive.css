@@ -1,0 +1,33 @@
+@media only screen and (min-width: 768px) {
+
+  body > header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 42%;
+    height: 100%;
+    z-index: -1;
+    float: left;
+  }
+
+  .container {
+    width: 50%;
+    float: right;
+    margin: 1em;
+    box-shadow: none;
+  }
+
+  nav > div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 1.5em 2em;
+    z-index: 1;
+    background: inherit;
+    width: 42%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0;  
+  }
+}

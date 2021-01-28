@@ -70,8 +70,3 @@ article.tweet a {
   color: #b8b5ad;
   text-decoration: none;
 }
-
-header > a {
-  font-size: 1.5em;
-  display: none;
-}
