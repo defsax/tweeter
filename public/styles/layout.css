@@ -25,13 +25,33 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
-   margin: auto;
-   width: 90%;
-   background-color: #f4f1ec;
- }
+main {
+  margin: auto;
+  width: 90%;
+  background-color: #f4f1ec;
+}
 
- .container {
+.scrll-btn-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.scrll-btn-container > button {
+  box-sizing: content-box;
+  color: white;
+  background: #4056A1;
+  border: none;
+  padding: 0.5em;
+  margin: 0.5em 0.3em;
+  border-radius: 60%;
+  transition-duration: 0.7s;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+}
+
+.container {
   padding: 2em;
   margin: auto;
   margin-top: 2em;
@@ -40,4 +60,4 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
- }
+}
