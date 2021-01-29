@@ -2,6 +2,7 @@
 $(document).ready(function() {
   const counter = $("#tweet-text").parent().find($("output.counter"));
 
+  //on input, check character count in #tweet-text
   $("#tweet-text").on('input',function() {
     counter[0].value = 140 - $("#tweet-text").val().length;
     if (counter[0].value < 0)
@@ -10,12 +11,14 @@ $(document).ready(function() {
       counter.css({"color": "black"});
   });
 
+  //scroll up when bottom right button is clicked
   $(".scrll-btn-container > button").on('click', function() {
 
     if ($('.new-tweet').css('display') === 'none') {
       $('.new-tweet').css('display', 'block');
     }
 
+    //scroll to a different position depending on (responsive) window size
     let homePos = 0;
     if ($(window).width() < 768)
       homePos = 530;
@@ -24,11 +27,12 @@ $(document).ready(function() {
   });
 
   $(window).scroll(() => {
+    //change when button appears depending on (responsive) window size
     let buttonAppearAt = 120;
     if ($(window).width() < 768)
       buttonAppearAt = 531;
 
-
+    //set button to appear or disappear
     if ($(window).scrollTop() >= buttonAppearAt) {
       $(".scrll-btn-container").css('display', 'block');
     } else {
@@ -36,6 +40,7 @@ $(document).ready(function() {
     }
   });
 
+  //reset page to top
   $(window).on('beforeunload', function() {
     $(window).scrollTop(0);
   });
