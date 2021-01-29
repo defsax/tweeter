@@ -10,9 +10,9 @@ Created as a front-end project for Lighthouse Labs.
 
 !["Screenshot of full app"](https://github.com/defsax/tweeter/blob/master/docs/fullnav.png)
 <br>
-!["Screenshot of mobile feed"](https://github.com/defsax/tweeter/blob/master/docs/feed.png)
-<br>
 !["Screenshot of fullsized app view with text box"](https://github.com/defsax/tweeter/blob/master/docs/fullsize.png)
+<br>
+!["Screenshot of mobile feed"](https://github.com/defsax/tweeter/blob/master/docs/feed.png)
 <br>
 !["Screenshot of tablet scaled header"](https://github.com/defsax/tweeter/blob/master/docs/header-tablet.png)
 
