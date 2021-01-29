@@ -8,12 +8,20 @@ Created as a front-end project for Lighthouse Labs.
 
 ## Final Product
 
+On desktop.
+
 !["Screenshot of full app"](https://github.com/defsax/tweeter/blob/master/docs/fullnav.png)
-<br>
+
+Scrolling down...
+
 !["Screenshot of fullsized app view with text box"](https://github.com/defsax/tweeter/blob/master/docs/fullsize.png)
-<br>
+
+Responsive mobile view.
+
 !["Screenshot of mobile feed"](https://github.com/defsax/tweeter/blob/master/docs/feed.png)
-<br>
+
+A tablet sized view.
+
 !["Screenshot of tablet scaled header"](https://github.com/defsax/tweeter/blob/master/docs/header-tablet.png)
 
 ## Getting Started
